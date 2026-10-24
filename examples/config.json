@@ -1,0 +1,16 @@
+{
+	"configs": [
+		{
+			"name": "development",
+			"debug": true,
+			"port": 8000,
+			"host": "127.0.0.1"
+		},
+		{
+			"name": "production",
+			"debug": false,
+			"port": 443,
+			"host": "example.com"
+		}
+	]
+}
