@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configs>
+  <config>
+    <name>development</name>
+    <debug>true</debug>
+    <port>8000</port>
+    <host>127.0.0.1</host>
+  </config>
+  <config>
+    <name>production</name>
+    <debug>false</debug>
+    <port>443</port>
+    <host>example.com</host>
+  </config>
+</configs>
