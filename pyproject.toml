@@ -8,6 +8,7 @@ packages = [{ include = "config_manager" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"
+pre-commit = "^4.7.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0"

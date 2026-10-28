@@ -31,10 +31,9 @@ def test_convert_csv_to_xml(sample_files, tmp_path, sample_entries):
 def test_transaction_restores_original_after_error(tmp_path):
     path = tmp_path / "config.json"
     path.write_text("original", encoding="utf-8")
-    with pytest.raises(RuntimeError):
-        with ConfigTransaction(path):
-            path.write_text("changed", encoding="utf-8")
-            raise RuntimeError("simulate failure")
+    with pytest.raises(RuntimeError), ConfigTransaction(path):
+        path.write_text("changed", encoding="utf-8")
+        raise RuntimeError("simulate failure")
     assert path.read_text(encoding="utf-8") == "original"
     assert path.with_suffix(".json.bak").exists()
 
