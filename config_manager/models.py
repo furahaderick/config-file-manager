@@ -36,7 +36,7 @@ def validate_entry(entry: dict[str, object]) -> ConfigEntry:
 
     raw_port = entry["port"]
     if not isinstance(raw_port, (int, str)):
-        raise ValueError("Field 'port' must be an integer.")
+        raise TypeError("Field 'port' must be an integer.")
 
     try:
         port = int(raw_port)

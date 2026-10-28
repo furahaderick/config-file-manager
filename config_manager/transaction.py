@@ -24,7 +24,7 @@ class ConfigTransaction:
         exception_type: type[BaseException] | None,
         exception: BaseException | None,
         traceback: TracebackType | None,
-    ) -> bool:
+    ):
         if exception_type is not None:
             shutil.copy2(self.backup_path, self.path)
         return False

@@ -3,10 +3,11 @@
 import csv
 import json
 import xml.etree.ElementTree as ET
+from collections.abc import Iterator
 from pathlib import Path
-from typing import Iterator, Protocol
+from typing import Protocol
 
-from config_manager.models import ConfigEntry, validate_entry, validate_entries
+from config_manager.models import ConfigEntry, validate_entries, validate_entry
 
 
 class FormatHandler(Protocol):
@@ -21,7 +22,7 @@ class JsonHandler:
         with path.open("r", encoding="utf-8") as file:
             data = json.load(file)
         if not isinstance(data, dict) or not isinstance(data.get("configs"), list):
-            raise ValueError("JSON must contain a 'configs' list.")
+            raise TypeError("JSON must contain a 'configs' list.")
         return validate_entries(data["configs"])
 
     def write(self, path: Path, entries: list[ConfigEntry]) -> None:

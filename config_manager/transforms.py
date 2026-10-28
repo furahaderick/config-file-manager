@@ -1,6 +1,7 @@
 """Small functional transformations used by the manager."""
 
 from collections.abc import Iterable
+
 from config_manager.models import ConfigEntry, validate_entry
 
 

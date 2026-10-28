@@ -1,6 +1,6 @@
 import pytest
 
-from config_manager.models import validate_entry, validate_entries
+from config_manager.models import validate_entries, validate_entry
 
 
 def test_valid_entry(sample_entries):

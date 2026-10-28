@@ -1,4 +1,5 @@
 import json
+
 import pytest
 
 from config_manager.handlers import CsvHandler, JsonHandler, XmlHandler, handler_for

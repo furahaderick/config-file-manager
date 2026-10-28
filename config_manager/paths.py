@@ -2,7 +2,6 @@
 
 from pathlib import Path
 
-
 SUPPORTED_SUFFIXES = {".json", ".csv", ".xml"}
 
 
